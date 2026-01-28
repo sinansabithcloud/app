@@ -1,8 +1,15 @@
-# Use NGINX image
+# Use lightweight nginx image
 FROM nginx:alpine
 
-# Copy frontend file to nginx default folder
+# Remove default nginx static files
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copy our frontend
 COPY index.html /usr/share/nginx/html/index.html
 
-# Expose port 80
+# Expose nginx port
 EXPOSE 80
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]
+
