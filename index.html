@@ -1,18 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Simple App</title>
+    <meta charset="UTF-8">
+    <title>Simple Frontend App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 320px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #555;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            background: #667eea;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #5a67d8;
+        }
+
+        .status {
+            margin-top: 15px;
+            font-weight: bold;
+            color: green;
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Hello World</h1>
-    <button onclick="sayHi()">Click me</button>
+<div class="card">
+    <h1>Frontend Status</h1>
+    <p>Click the button to verify frontend</p>
+    <button onclick="checkFrontend()">Check</button>
+    <div class="status" id="status">✅ Frontend is working!</div>
+</div>
 
-    <script>
-        function sayHi() {
-            alert("Frontend is working!");
-        }
-    </script>
+<script>
+    function checkFrontend() {
+        document.getElementById("status").style.display = "block";
+    }
+</script>
 
 </body>
 </html>
